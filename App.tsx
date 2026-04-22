@@ -11,9 +11,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Tracker">
-        <Stack.Screen name="Tracker" component={TrackerScreen} />
-        <Stack.Screen name="Goals" component={GoalsScreen} />
-        <Stack.Screen name="AddEntry" component={AddEntryScreen} />
+        <Stack.Screen name="Tracker" component={TrackerScreen}  options={{headerShown: false}}/>
+        <Stack.Screen name="Goals" component={GoalsScreen}  options={{headerShown: false}}/>
+        <Stack.Screen name="AddEntry" component={AddEntryScreen}  options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
