@@ -8,6 +8,7 @@ type NutritionStore = {
   setGoals: (goals: NutritionGoals) => void;
   addEntry: (entry: NutritionEntry) => void;
   loadData: () => Promise<void>;
+  deleteEntry: (id: string) => void;
 };
 
 export const useNutritionStore = create<NutritionStore>((set) => ({
@@ -48,6 +49,14 @@ export const useNutritionStore = create<NutritionStore>((set) => ({
         sodium: 2300,
       },
       entries: savedEntries ? JSON.parse(savedEntries) : [],
+    });
+  },
+
+  deleteEntry: async (id) => {
+    set((state) => {
+      const updatedEntries = state.entries.filter((entry) => entry.id !== id);
+      AsyncStorage.setItem('entries', JSON.stringify(updatedEntries));
+      return {entries: updatedEntries};
     });
   },
 }));
