@@ -343,7 +343,7 @@ export default function TrackerScreen({ navigation }: any) {
           )}
 
           <Pressable
-            onPress={() => console.log('View all entries later')}
+            onPress={() => navigation.navigate('AllEntries')}
             style={{
               backgroundColor: '#4a4a4a',
               paddingVertical: 12,
