@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {useEffect} from 'react';
 import { useNutritionStore } from './src/store/useNutritionStore';
+import {StatusBar} from 'expo-status-bar';
 
 import GoalsScreen from './src/screens/GoalsScreen';
 import TrackerScreen from './src/screens/TrackerScreen';
@@ -18,6 +19,8 @@ export default function App() {
   }, []);
   
   return (
+    <>
+    <StatusBar hidden />
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Tracker">
         <Stack.Screen name="Tracker" component={TrackerScreen}  options={{headerShown: false}}/>
@@ -26,5 +29,6 @@ export default function App() {
         <Stack.Screen name="AllEntries" component={AllEntries} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
+    </>
   );
 }
