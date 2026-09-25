@@ -7,7 +7,7 @@ This project was created to gain experience developing a mobile application with
 ## Screenshots
 
 ### Nutrition Tracker
-<img src="Downloads/Main.png" width="300">
+<img src="screenshots/Main.jpg" width="300">
 
 ### Add Entry
 [PLACEHOLDER - Add Entry Screen Screenshot]
@@ -16,7 +16,7 @@ This project was created to gain experience developing a mobile application with
 [PLACEHOLDER - Add Goals Screen Screenshot]
 
 ### All Entries
-<img src="Downloads/AllEntries.png" width="300">
+<img src="screenshots/AllEntries.jpg" width="300">
 
 ## Features
 
