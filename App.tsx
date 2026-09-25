@@ -1,5 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {useEffect} from 'react';
+import { useNutritionStore } from './src/store/useNutritionStore';
 
 import GoalsScreen from './src/screens/GoalsScreen';
 import TrackerScreen from './src/screens/TrackerScreen';
@@ -9,6 +11,12 @@ import AllEntries from './src/screens/AllEntries';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const loadData = useNutritionStore((state) => state.loadData);
+
+  useEffect(() => {
+    loadData();
+  }, []);
+  
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Tracker">
